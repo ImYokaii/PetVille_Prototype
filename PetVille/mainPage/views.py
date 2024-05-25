@@ -4,13 +4,14 @@ from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.models import User
-from .models import Post
+from .models import Post, TrainingPost
 # Create your views here.
 
 def home(request):
     postedcontent = {
-        'posts': Post.objects.all()
+        'posts': Post.objects.all()        
     }
+    
     return render(request, 'main/home.html', postedcontent)
 
 class PostListView(ListView):
@@ -78,3 +79,7 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 def about(request):
     return render(request, 'main/about.html', {'title': 'About'})
+
+def store(request):
+    return render(request, 'main/store.html', {'title': 'Store'})
+
