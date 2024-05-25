@@ -28,15 +28,19 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarToggle">
                   <div class="navbar-nav mr-auto">
-                    <a class="nav-item nav-link" href="{% url 'mainPage-home' %}">Home</a>
-                    <a class="nav-item nav-link" href="{% url 'mainPage-about' %}">About</a>
+                    {% if user.is_authenticated %}
+                    <a class="nav-item nav-link" href="{% url 'mainPage-home' %}"><button type="button" class="btn btn-outline-success">Home</button></a>
+                    <a class="nav-item nav-link" href="{% url 'profile' %}"><button type="button" class="btn btn-outline-light">Profile</button></a>
+                    {% else %}
+                    <a class="nav-item nav-link" href="{% url 'mainPage-home' %}"><button type="button" class="btn btn-outline-success">Home</button></a>
+                    {% endif %}
                   </div>
                   <!-- Navbar Right Side -->
                   <div class="navbar-nav">
                     {% if user.is_authenticated %}
-                      <a class="nav-item nav-link" href="{% url 'post-create' %}">New Post</a>
-                      <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
-                      <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+                      <a class="nav-item nav-link" href="{% url 'post-create' %}"><button type="button" class="btn btn-primary">New Post</button></a>
+                      
+                      <a class="nav-item nav-link" href="{% url 'logout' %}"><button type="button" class="btn btn-outline-danger">Logout</button></a>
                     {% else %}
                       <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
                       <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
@@ -64,10 +68,10 @@
                   <h3>Welcome to PetVille!</h3>
                   <p class='text-muted'>Here are other services we offer
                     <ul class="list-group">
-                      <li class="list-group-item list-group-item-light">Pet Training/Sitting</li>
-                      <li class="list-group-item list-group-item-light">Veterinary Emergency</li>
-                      <li class="list-group-item list-group-item-light">Obituary</li>
-                      <li class="list-group-item list-group-item-light"><a href="{% url 'mainPage-store' %}">Store</a></li>
+                      <li class="list-group-item list-group-item-light"><a href="{% url 'mainPage-obituary' %}"><button type="button" class="btn btn-info w-100">Pet Training/Sitting</button></a></li>
+                      <li class="list-group-item list-group-item-light"><a href="{% url 'mainPage-emergency' %}"><button type="button" class="btn btn-info w-100">Veterinary Emergency</button></a></li>
+                      <li class="list-group-item list-group-item-light"><a href="{% url 'mainPage-obituary' %}"><button type="button" class="btn btn-info w-100">Obituary</button></a></li>
+                      <li class="list-group-item list-group-item-light"><a href="{% url 'mainPage-store' %}"><button type="button" class="btn btn-info w-100">Store</button></a></li>
                     </ul>
                   </p>
                 </div>

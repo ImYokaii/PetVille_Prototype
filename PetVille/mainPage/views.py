@@ -83,3 +83,9 @@ def about(request):
 def store(request):
     return render(request, 'main/store.html', {'title': 'Store'})
 
+def obituary(request):
+    return render(request, 'main/obituary.html', {'title': 'Obituary'})
+
+def emergency(request):
+    return render(request, 'main/emergency.html', {'title': 'Emergency'})
+
