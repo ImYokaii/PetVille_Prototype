@@ -89,3 +89,6 @@ def obituary(request):
 def emergency(request):
     return render(request, 'main/emergency.html', {'title': 'Emergency'})
 
+def training(request):
+    return render(request, 'main/training.html', {'title': 'Pet Wellness'})
+

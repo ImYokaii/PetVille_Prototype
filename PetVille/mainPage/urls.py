@@ -12,4 +12,5 @@ urlpatterns = [
     path('store/', views.store, name='mainPage-store'),
     path('obituary/', views.obituary, name='mainPage-obituary'),
     path('emergency/', views.emergency, name='mainPage-emergency'),
+    path('training/', views.training, name='mainPage-training'),
 ]
