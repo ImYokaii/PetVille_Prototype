@@ -80,12 +80,14 @@ WSGI_APPLICATION = 'PetVille.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'default': dj_database_url.config(
+         default=os.environ.get('DATABASE_URL')
+        )
     }
 }
+#PGPASSWORD=4uSvJD3zf94WDXoyT0gT8KBSgp0QLEnB psql -h dpg-cp9jotn109ks73a9u9lg-a.oregon-postgres.render.com -U petville_db_user petville_db
 database_url = os.environ.get("DATABASE_URL")
-DATABASES["default"] = dj_database_url.parse(database_url)
+#DATABASES["default"] = dj_database_url.parse(database_url)
 
 #postgres://petville_db_user:4uSvJD3zf94WDXoyT0gT8KBSgp0QLEnB@dpg-cp9jotn109ks73a9u9lg-a.oregon-postgres.render.com/petville_db
 
