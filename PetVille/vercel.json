@@ -10,12 +10,5 @@
             "src": "/(.*)",
             "dest": "PetVille/wsgi.py"
         }
-    ],
-    
-    "rewrites": [
-        { "source": "/(.*)", "destination": "/" }
     ]
-      
-    
 }
-
