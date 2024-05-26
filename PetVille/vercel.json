@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
       {
-        "src": "mainPage/wsgi.py",
+        "src": "PetVille/wsgi.py",
         "use": "@vercel/python",
         "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
       },
@@ -21,7 +21,7 @@
       },
       {
         "src": "/(.*)",
-        "dest": "mainPage/wsgi.py"
+        "dest": "PetVille/wsgi.py"
       }
     ]
   }
