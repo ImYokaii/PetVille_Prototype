@@ -80,12 +80,13 @@ WSGI_APPLICATION = 'PetVille.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'postgres',
-        'USER': 'petville_db_user',
-        'PASSWORD': '4uSvJD3zf94WDXoyT0gT8KBSgp0QLEnB',
-        'HOST': 'oregon-postgres.render.com',
-        'PORT': '5432'
+        dj_database_url.parse("DATABASE_URL")
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': 'postgres',
+        #'USER': 'petville_db_user',
+        #'PASSWORD': '4uSvJD3zf94WDXoyT0gT8KBSgp0QLEnB',
+        #'HOST': 'oregon-postgres.render.com',
+        #'PORT': '5432'
     }
 }
 #PGPASSWORD=4uSvJD3zf94WDXoyT0gT8KBSgp0QLEnB psql -h dpg-cp9jotn109ks73a9u9lg-a.oregon-postgres.render.com -U petville_db_user petville_db
