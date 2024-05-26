@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'PetVille.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': 'postgres',
         'USER': 'petville_db_user',
         'PASSWORD': '4uSvJD3zf94WDXoyT0gT8KBSgp0QLEnB',
         'HOST': 'dpg-cp9jotn109ks73a9u9lg-a.oregon-postgres.render.com',
