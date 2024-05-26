@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-n-pyi&kjtx0x5bb&3wc^t3k$ck$nuq(^ql85%u4+d%%rh$xo0f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.vercel.app','now.sh','127.0.0.1','localhost']
+ALLOWED_HOSTS = ['.vercel.app']
 
 
 # Application definition
@@ -80,12 +80,8 @@ WSGI_APPLICATION = 'PetVille.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'ChcRmIQSfyATRSCjTnFsstBeyKyfwgBw',
-        'HOST': '',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -139,6 +135,3 @@ LOGIN_URL = 'login'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
