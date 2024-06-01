@@ -92,3 +92,6 @@ def emergency(request):
 def training(request):
     return render(request, 'main/training.html', {'title': 'Pet Wellness'})
 
+
+
+
