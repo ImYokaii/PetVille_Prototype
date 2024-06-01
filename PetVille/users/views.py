@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
+from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm, trainingRegisterForm, sittingForm, vetvisitForm
 # Create your views here.
 
 def register(request):
@@ -44,4 +44,19 @@ def profile (request):
     }
 
     return render (request, 'users/profile.html', context)
+
+def trainingForm(request):
+    context = {'form': trainingRegisterForm()}
+    return render(request, 'users/trainingForm.html', context)
+
+def petsittingForm(request):
+    context = {'form': sittingForm()}
+    return render(request, 'users/petsittingForm.html', context)
+
+def veterinaryForm(request):
+    context = {'form': vetvisitForm()}
+    return render(request, 'users/veterinaryForm.html', context)
+
+
+
 

@@ -1,0 +1,7 @@
+{% extends "main/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h2>PetVille Pet Sitting Form</h2>
+<fieldset class="form-group">{{form | crispy}}</fieldset>
+<a href="{% url 'mainPage-training' %}"><button class="btn btn-outline-info" type="submit">Submit</button></a>
+{% endblock content %}
